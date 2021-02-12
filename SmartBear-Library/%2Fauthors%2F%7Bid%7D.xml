@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/authors/{id}" path="/authors/{id}" id="e66af2d2-f27c-446c-bc0b-39e87f5ba186" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e66af2d2-f27c-446c-bc0b-39e87f5ba186fileName">%2Fauthors%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>id</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:dataType>integer</con:dataType>
+      <con:description>book id</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET" id="00d5511f-ebd5-4a36-84f1-cc752aecb0a4" method="GET">
+    <con:description>Query for a specific author by ID.
+returns author object</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 200,
+  "result" : {
+    "id" : 0,
+    "first_name" : "string",
+    "last_name" : "string",
+    "_link" : "string"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="0bfd06ce-aaaa-4165-9155-12b1ced168b2" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

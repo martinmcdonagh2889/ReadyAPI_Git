@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/subjects" path="/subjects" id="8a427368-ce62-4edc-bb03-5d649d148eb6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8a427368-ce62-4edc-bb03-5d649d148eb6fileName">%2Fsubjects</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="66a3e678-ccdf-4106-a5d1-b04c1e176c86" method="GET">
+    <con:description>Returns array based on book search params.
+searches books</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>title</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>title search parameter</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>author</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>author search parameter</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 0,
+  "title" : "Game of Thrones",
+  "description" : "string",
+  "author" : {
+    "id" : 0,
+    "first_name" : "string",
+    "last_name" : "string",
+    "_link" : "string"
+  },
+  "_link" : "/books/105",
+  "pub_date" : "10/15/1974"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="d769dc51-83e6-4df2-bd46-3f3f183bcca9" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

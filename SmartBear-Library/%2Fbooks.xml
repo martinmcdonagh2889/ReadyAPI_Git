@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/books" path="/books" id="32068578-83ee-41ab-b1c8-b248075023cb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="32068578-83ee-41ab-b1c8-b248075023cbfileName">%2Fbooks</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="4d90d58e-bab2-450c-93df-3cdb55aa404e" method="GET">
+    <con:description>Returns array based on book search params.
+searches books</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>title</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>title search parameter</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>author</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>author search parameter</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>book type</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 0,
+  "title" : "Game of Thrones",
+  "description" : "string",
+  "author" : {
+    "id" : 0,
+    "first_name" : "string",
+    "last_name" : "string",
+    "_link" : "string"
+  },
+  "_link" : "/books/105",
+  "pub_date" : "10/15/1974"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="41512e5b-de13-411e-a0e8-a5d921fbcb7e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="book type" value=""/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>title</con:entry>
+        <con:entry>author</con:entry>
+        <con:entry>book type</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

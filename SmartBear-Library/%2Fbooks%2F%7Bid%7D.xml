@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/books/{id}" path="/books/{id}" id="f5a37f33-3e4a-447e-92e0-8d87471e504a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f5a37f33-3e4a-447e-92e0-8d87471e504afileName">%2Fbooks%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>id</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:dataType>integer</con:dataType>
+      <con:description>book id</con:description>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="GET" id="61d19ef1-769d-4f8f-823a-59c448e0427f" method="GET">
+    <con:description>Returns array based of search params.
+returns book object</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 200,
+  "result" : {
+    "id" : 0,
+    "title" : "Game of Thrones",
+    "description" : "string",
+    "author" : {
+      "id" : 0,
+      "first_name" : "string",
+      "last_name" : "string",
+      "_link" : "string"
+    },
+    "_link" : "/books/105",
+    "pub_date" : "10/15/1974"
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="bdc76576-d36e-4df1-9539-0e0dba7e65a4" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

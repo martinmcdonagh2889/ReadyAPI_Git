@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/books" method="GET" resourcePath="/books" id="8c9da62b-6c8e-4901-b0ad-d4760a79d471" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8c9da62b-6c8e-4901-b0ad-d4760a79d471fileName">%2Fbooks</con:setting>
+  </con:settings>
+  <con:defaultResponse>Response 2</con:defaultResponse>
+  <con:dispatchStyle>PARAMETER</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>Rule 1</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EQUALS</con:parameterOperationType>
+        <con:parameterName>book type</con:parameterName>
+        <con:parameterValue>fantasy</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>Response 1</con:responseName>
+    </con:ParameterDispatcherRule>
+    <con:ParameterDispatcherRule>
+      <con:ruleName>Rule 2</con:ruleName>
+      <con:parameterDispatcherCondition>
+        <con:parameterType>QUERY</con:parameterType>
+        <con:parameterOperationType>EQUALS</con:parameterOperationType>
+        <con:parameterName>book type</con:parameterName>
+        <con:parameterValue>crime</con:parameterValue>
+      </con:parameterDispatcherCondition>
+      <con:responseName>Response 2</con:responseName>
+    </con:ParameterDispatcherRule>
+  </con:parameterDispatcherRuleContainer>
+  <con:routeScript/>
+  <con:response name="Response 1" id="5aa869fd-c1c7-477e-991e-e35d0b3ed5e9" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="Data Source 1">
+    <con:settings/>
+    <con:responseContent>{
+  "id" : 0,
+  "title" : "${#MockResponse#Book}",
+  "description" : "string",
+  "author" : {
+    "id" : 0,
+    "first_name" : "${#MockResponse#Author FirstName}",
+    "last_name" : "${#MockResponse#Author LastName}",
+    "_link" : "string"
+  },
+  "_link" : "/books/105",
+  "pub_date" : "${#MockResponse#Publish Date}"
+}</con:responseContent>
+  </con:response>
+  <con:response name="Response 2" id="c1c3ade7-e844-404c-86a2-a31b55565d5d" httpResponseStatus="400" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{ 
+	"message" : "book not available"
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

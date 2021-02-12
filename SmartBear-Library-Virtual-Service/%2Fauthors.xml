@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/authors" method="GET" resourcePath="/authors" id="bfa285e9-1ff1-4ca5-9fe9-e8b8e4f52516" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bfa285e9-1ff1-4ca5-9fe9-e8b8e4f52516fileName">%2Fauthors</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="89657213-7a1a-4721-9f4d-e5d2cf1eae7c" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "id" : 0,
+  "first_name" : "string",
+  "last_name" : "string",
+  "_link" : "string"
+}</con:responseContent>
+  </con:response>
+  <con:response name="Response 2" id="2b4b83c5-0db9-4c36-b9f5-f1d2830de77a" httpResponseStatus="404" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

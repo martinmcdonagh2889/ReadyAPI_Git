@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="/subjects" method="GET" resourcePath="/subjects" id="ac50fa97-774b-4931-907a-50f06a758bc8" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ac50fa97-774b-4931-907a-50f06a758bc8fileName">%2Fsubjects</con:setting>
+  </con:settings>
+  <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Response 1" id="28c60aa7-67b6-4913-943c-2c6eed8cbf04" httpResponseStatus="200" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "id" : 0,
+  "title" : "Game of Thrones",
+  "description" : "string",
+  "author" : {
+    "id" : 0,
+    "first_name" : "string",
+    "last_name" : "string",
+    "_link" : "string"
+  },
+  "_link" : "/books/105",
+  "pub_date" : "10/15/1974"
+}</con:responseContent>
+  </con:response>
+  <con:response name="Response 2" id="e9d06d5b-854e-4baa-b901-ea3b65417223" httpResponseStatus="404" mediaType="application/json" compressedBodyContent="aced00057372002f636f6d2e657669776172652e736f617075692e696d706c2e737570706f72742e436f6d7072657373656456616c7565000b8b02c748eeab0200025a000a636f6d707265737365645b0004646174617400025b4278700070" dataSource="">
+    <con:settings/>
+    <con:responseContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:responseContent>
+  </con:response>
+</con:restMockAction>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="a4205d5b-feab-4d42-8d20-72145f48349e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a4205d5b-feab-4d42-8d20-72145f48349efileName">TestCase-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="REST Request" id="62108900-46aa-439f-8b2b-fee0ed7c3046">
+    <con:settings/>
+    <con:config service="SmartBear Library" resourcePath="/books" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="41512e5b-de13-411e-a0e8-a5d921fbcb7e" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8088/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://virtserver.swaggerhub.com/books</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="25ed7a62-9ace-462b-9743-fd93560b952b" name="Valid HTTP Status Codes" disabled="true">
+          <con:settings/>
+          <con:configuration>
+            <codes>404</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="33b4c67b-66d0-455d-93eb-e817c4a3ae7f" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="70c7723a-1c5f-4dc5-95f9-d96c9f7bd9bd" name="Match content of [title]" disabled="true">
+          <con:configuration>
+            <path>$['title']</path>
+            <content>"Lord of the Rings "</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="46a2f238-ca32-4ec1-9c06-177ba8e62933" name="Message Content Assertion">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:id[1]</con:xpath>
+              <con:element>id</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:title[1]</con:xpath>
+              <con:element>title</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Lord of the Rings</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:description[1]</con:xpath>
+              <con:element>description</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>string</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:author[1]/ns1:id[1]</con:xpath>
+              <con:element>id</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:author[1]/ns1:first_name[1]</con:xpath>
+              <con:element>first_name</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>J.R.R</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:author[1]/ns1:last_name[1]</con:xpath>
+              <con:element>last_name</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Tolkien</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:author[1]/ns1:_link[1]</con:xpath>
+              <con:element>_link</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>string</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:_link[1]</con:xpath>
+              <con:element>_link</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>/books/105</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://virtserver.swaggerhub.com/books';
+//ns1:Response[1]/ns1:pub_date[1]</con:xpath>
+              <con:element>pub_date</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>7/29/54</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://virtserver.swaggerhub.com/books">
+   <id>0</id>
+   <title>Lord of the Rings</title>
+   <description>string</description>
+   <author>
+      <id>0</id>
+      <first_name>J.R.R</first_name>
+      <last_name>Tolkien</last_name>
+      <_link>string</_link>
+   </author>
+   <_link>/books/105</_link>
+   <pub_date>7/29/54</pub_date>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="GroovyScriptAssertion" id="79cd0f6e-c01c-47ac-bf4f-8102179e0731" name="Script Assertion">
+          <con:configuration>
+            <scriptText>//assert messageExchange.timeTaken &lt; 5000
+
+//def endpoint = "http://localhost:8088/books"
+//assert messageExchange.getEndpoint() == endpoint
+//log.info messageExchange.getEndpoint()
+
+//get json response 
+import groovy.json.JsonSlurper 
+def responseMessage = messageExchange.response.responseContent
+def json = new JsonSlurper().parseText(responseMessage)</scriptText>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="book type" value="fantasy"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>title</con:entry>
+          <con:entry>author</con:entry>
+          <con:entry>book type</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="ed96127e-0484-48b1-baab-0a72d530e7be">
+    <con:settings/>
+    <con:config>
+      <script>//Groovy - run request from same TestCase
+def status = testRunner.runTestStepByName("REST Request")
+log.info ("   >>>  "+status) 
+
+def result = status.getStatus().toString();
+log.info ("   ---- "+result)
+
+if (result == "OK") { 
+	log.info ("    >>>    Test Passed") 
+}//else {
+	//log.info("    >>>     TestFailed") 
+//}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script 2" id="db7ad285-a3a3-4d54-8e5f-c78ce94cd749">
+    <con:settings/>
+    <con:config>
+      <script>//Groovy - run request from another TestCase or TestSuite
+project = testRunner.testCase.testSuite.project ;
+tcase = project.testSuites["TestSuite1"].testCases["TestCase1"] ; 
+tstep = tcase.getTestStepByName("RESTRequest");
+
+def status = tstep.run(testRunner, context)
+def result = status.getStatus().toString();
+log.info ("   ----   "+result)</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

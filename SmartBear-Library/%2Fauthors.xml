@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/authors" path="/authors" id="09ab9577-515e-4251-806f-18b7abfb21bf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="09ab9577-515e-4251-806f-18b7abfb21bffileName">%2Fauthors</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="0eee58f1-b756-41e3-8c92-ef8b710d7d20" method="GET">
+    <con:description>Returns array based on author search params.
+searches authors</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>first_name</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>first name search parameter</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>last_name</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>last name search parameter</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 0,
+  "first_name" : "string",
+  "last_name" : "string",
+  "_link" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "status" : 404,
+  "message" : "Resource on Swaggerhub"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="59710ca8-d2d2-4503-85b7-781b0a229b36" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://virtserver.swaggerhub.com</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

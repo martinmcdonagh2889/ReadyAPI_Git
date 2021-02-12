@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService id="7891aebf-93b3-490e-a913-9806842f6dd3" port="8088" path="/" host="localhost" name="SmartBear Library Virtual Service" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7891aebf-93b3-490e-a913-9806842f6dd3fileName">SmartBear-Library-Virtual-Service</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>8</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:minApplicationDelay>4</con:minApplicationDelay>
+    <con:virtError>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:dataSources>
+    <con:dataSource>
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/martin.mcdonagh/Desktop/Books.xlsx</file>
+          <worksheet>Sheet1</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:name>Data Source 1</con:name>
+      <con:property>Book</con:property>
+      <con:property>Author FirstName</con:property>
+      <con:property>Author LastName</con:property>
+      <con:property>Publish Date</con:property>
+    </con:dataSource>
+  </con:dataSources>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>
